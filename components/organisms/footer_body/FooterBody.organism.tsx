@@ -1,0 +1,35 @@
+/* eslint-disable no-unused-vars */
+import AttachFileIcon from '@material-ui/icons/AttachFile';
+import MoodIcon from '@material-ui/icons/Mood';
+import SendIcon from '@material-ui/icons/Send';
+import { Input } from 'components/atoms';
+import React from 'react';
+
+interface IProps {
+  onChange: (val: string) => void;
+  onSubmitMessage: () => void;
+  messageValue: string;
+}
+
+const FooterBody: React.FC<IProps> = ({
+  onChange,
+  onSubmitMessage,
+  messageValue,
+}) => {
+  return (
+    <div className="flex items-center justify-between bg-secondary py-2 px-6 gap-4">
+      <div>
+        <MoodIcon style={{ fill: '#2C3333' }} />
+      </div>
+      <div>
+        <AttachFileIcon style={{ fill: '#2C3333' }} />
+      </div>
+      <Input onChange={(e) => onChange(e.target.value)} value={messageValue} />
+      <div className="cursor-pointer" onClick={onSubmitMessage}>
+        <SendIcon style={{ fill: '#2C3333' }} />
+      </div>
+    </div>
+  );
+};
+
+export default FooterBody;
