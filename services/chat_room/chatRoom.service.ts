@@ -18,6 +18,8 @@ const chatRoomService = () => {
     try {
       const res = (await query(CHAT_ROOM_ROUTE, 'GET')) as Response<ChatRoom[]>;
 
+      res.data.sort((a, b) => b.updated_at - a.updated_at);
+
       return res;
     } catch (error) {
       console.log('useChatRoomApi getChatRoomService Error', error);

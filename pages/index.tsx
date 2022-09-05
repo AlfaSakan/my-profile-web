@@ -32,6 +32,7 @@ const Home: NextPage<IProps> = () => {
     modalRoomHook,
     contactHook,
 
+    sendingChat,
     loading,
     setLoading,
     onClickAddNewFriend,
@@ -72,10 +73,16 @@ const Home: NextPage<IProps> = () => {
                 return (
                   <div
                     key={`chat room ${room.chat_room_id} ${index}`}
-                    onClick={() =>
-                      chatRoomHook.onClickChatRoom(room, userHook.user.user_id)
-                    }
-                    className="flex flex-col"
+                    onClick={() => {
+                      chatRoomHook.onClickChatRoom(room, userHook.user.user_id);
+                      messageHook.messageHandler('');
+                    }}
+                    className={`flex flex-col ${
+                      chatRoomHook.choosenChatRoom.chat_room_id ===
+                      room.chat_room_id
+                        ? 'bg-secondary'
+                        : 'bg-white'
+                    }`}
                   >
                     <MessageCard
                       name={room.name}
@@ -111,10 +118,10 @@ const Home: NextPage<IProps> = () => {
                   userHook.user.user_id,
                   chatRoomHook.choosenChatRoom?.chat_room_id || ''
                 )();
-                console.log(res);
-                // if (res) {
-                //   sendingChat(res);
-                // }
+
+                if (res) {
+                  sendingChat(res.data);
+                }
               } catch (error) {
                 console.log('SENDING CHAT ERROR', error);
               } finally {

@@ -8,3 +8,4 @@ export { default as useModalStatusHook } from './modal_status/modalStatus.hook';
 export { default as useSearchHook } from './search/search.hook';
 export { default as useUserHook } from './user/user.hook';
 export { default as useUserDataHook } from './user_data/userData.hook';
+export { default as useWebsocketHook } from './websocket/websocket.hook';

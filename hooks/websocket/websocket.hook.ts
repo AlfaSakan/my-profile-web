@@ -3,7 +3,7 @@ import { useState } from 'react';
 import useChatRoomApi from 'services/chat_room/chatRoom.service';
 import { parseStringToMessage } from 'utils/parseString.util';
 
-export const useWebsocket = (messageHandler: (_: Message) => void) => {
+const useWebsocketHook = (messageHandler: (_: Message) => void) => {
   const [websocket, setWebsocket] = useState<WebSocket>();
   const { getChatRoomByIdService } = useChatRoomApi();
 
@@ -24,6 +24,7 @@ export const useWebsocket = (messageHandler: (_: Message) => void) => {
 
     ws.onmessage = (msg) => {
       const data = msg.data as string;
+
       if (data.includes('\n')) {
         const arrMsg = data.split('\n');
 
@@ -84,3 +85,5 @@ export const useWebsocket = (messageHandler: (_: Message) => void) => {
     sendingChat,
   };
 };
+
+export default useWebsocketHook;

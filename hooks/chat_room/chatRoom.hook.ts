@@ -53,12 +53,16 @@ const useChatRoomHook = () => {
     [participants]
   );
 
-  const addMessageHandler = (newMessage: Message) => {
-    setChoosenChatRoom((prev) => {
-      if (!prev) return prev;
+  const addMessageHandler = async (newMessage: Message) => {
+    await chatRoomHandler();
 
-      return { ...prev, messages: [newMessage, ...prev.messages] };
-    });
+    if (newMessage.chat_room_id === choosenChatRoom.chat_room_id) {
+      setChoosenChatRoom((prev) => {
+        if (!prev) return prev;
+
+        return { ...prev, messages: [newMessage, ...prev.messages] };
+      });
+    }
   };
 
   const resetChatRoomHook = () => {

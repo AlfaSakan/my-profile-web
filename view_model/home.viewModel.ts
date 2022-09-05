@@ -12,11 +12,11 @@ import {
   useSearchHook,
   useUserDataHook,
   useUserHook,
+  useWebsocketHook,
 } from 'hooks';
 import { Participant } from 'models/participant/participant.model';
 import { User } from 'models/user/user.model';
 import { userService } from 'services';
-import { useWebsocket } from './websocket.hook';
 
 const useHomeViewModel = () => {
   const [loading, setLoading] = useState(false);
@@ -32,7 +32,7 @@ const useHomeViewModel = () => {
   const userDataHook = useUserDataHook();
   const modalRoomHook = useModalRoomHook();
 
-  const { connectingWebSocket, sendingChat } = useWebsocket(
+  const { connectingWebSocket, sendingChat } = useWebsocketHook(
     chatRoomHook.addMessageHandler
   );
 
@@ -73,13 +73,18 @@ const useHomeViewModel = () => {
   useEffect(() => {
     if (authHook.accessToken) {
       modalLoginHook.onCloseModal();
-      connectingWebSocket(userHook.user.user_id);
       chatRoomHook.chatRoomHandler();
       userHook.userRequest();
     } else {
       modalLoginHook.onOpenModal();
     }
   }, [authHook.accessToken]);
+
+  useEffect(() => {
+    if (userHook.user.user_id) {
+      connectingWebSocket(userHook.user.user_id);
+    }
+  }, [userHook.user.user_id]);
 
   useEffect(() => {
     if (chatRoomHook.participants.length !== 0) {
