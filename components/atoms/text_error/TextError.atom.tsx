@@ -6,7 +6,7 @@ interface IProps {
 
 const TextError: React.FC<IProps> = ({ errorMessage }) => {
   return (
-    <div className="flex items-center mt-0.5">
+    <div className="flex items-center absolute mt-1">
       <ErrorIcon
         style={{ fill: 'rgb(239 68 68)', fontSize: 14, marginRight: 4 }}
       />

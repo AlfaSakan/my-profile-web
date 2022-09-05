@@ -4,7 +4,6 @@ import { MouseEventHandler } from 'react';
 
 interface IProps {
   isOpen: boolean;
-  onClose?: () => void;
   onClickLogin?: MouseEventHandler<HTMLButtonElement>;
   onChangeName?: React.ChangeEventHandler<HTMLInputElement>;
   onChangePhoneNumber?: React.ChangeEventHandler<HTMLInputElement>;
@@ -16,7 +15,6 @@ interface IProps {
 
 const ModalLogin: React.FC<IProps> = ({
   isOpen,
-  onClose,
   onClickLogin,
   name,
   onChangeName,
@@ -26,9 +24,8 @@ const ModalLogin: React.FC<IProps> = ({
   textErrorPhone,
 }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen}>
       <Login
-        onClose={onClose}
         onClickLogin={onClickLogin}
         onChangeName={onChangeName}
         name={name}

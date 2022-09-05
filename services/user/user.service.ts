@@ -1,9 +1,7 @@
-import { useAppDispatch } from 'app/hook/hook.app';
 import { USER_ROUTE } from 'constants/route.constant';
 import { Response } from 'models/response/response.model';
 import { User } from 'models/user/user.model';
-import useFetchBase from 'services/api/api.service';
-import { getUser, patchUser } from 'stores/user/user.store';
+import fetchBase from 'services/api/api.service';
 
 interface UserParams {
   name: string;
@@ -13,21 +11,41 @@ interface UserParams {
   status?: string;
 }
 
-const useUserApi = () => {
-  const dispatch = useAppDispatch();
-  const { mutation, query } = useFetchBase();
+const userService = () => {
+  const { mutation, query } = fetchBase();
+
+  const searchUserService = async (name: string) => {
+    try {
+      const res = (await query(`${USER_ROUTE}/${name}`, 'GET')) as Response<
+        User[]
+      >;
+
+      return res;
+    } catch (error) {
+      console.log('useUserApi getUserService error', error);
+    }
+  };
 
   const getUserService = async () => {
     try {
       const res = (await query(USER_ROUTE, 'GET')) as Response<User>;
 
-      console.log('RES NIH', res);
-
-      if (res.message === 'OK') {
-        dispatch(getUser(res.data));
-      }
+      return res;
     } catch (error) {
-      console.log('useUserApi getUserService', error);
+      console.log('useUserApi getUserService error', error);
+    }
+  };
+
+  const findOneUserService = async (user_id: string) => {
+    try {
+      const res = (await query(
+        `${USER_ROUTE}/find/${user_id}`,
+        'GET'
+      )) as Response<User>;
+
+      return res;
+    } catch (error) {
+      console.log('useUserApi getUserService error', error);
     }
   };
 
@@ -35,11 +53,9 @@ const useUserApi = () => {
     try {
       const res = (await mutation(USER_ROUTE, 'POST', body)) as Response<User>;
 
-      if (res.message === 'OK') {
-        dispatch(getUser(res.data));
-      }
+      return res;
     } catch (error) {
-      console.log('useUserApi postUserService', error);
+      console.log('useUserApi postUserService error', error);
     }
   };
 
@@ -51,11 +67,9 @@ const useUserApi = () => {
         body
       )) as Response<string>;
 
-      if (res.message === 'OK') {
-        dispatch(patchUser(body));
-      }
+      return res;
     } catch (error) {
-      console.log('useUserApi patchUserService', error);
+      console.log('useUserApi patchUserService error', error);
     }
   };
 
@@ -63,7 +77,9 @@ const useUserApi = () => {
     getUserService,
     patchUserService,
     postUserService,
+    searchUserService,
+    findOneUserService,
   };
 };
 
-export default useUserApi;
+export default userService;

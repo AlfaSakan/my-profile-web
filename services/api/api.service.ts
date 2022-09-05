@@ -1,6 +1,5 @@
-import { useAppDispatch, useAppSelector } from 'app/hook/hook.app';
-import { BASE_URL } from 'configs/env/env.config';
-import { logout } from 'stores/session/session.store';
+import { exportEnv } from 'configs/env/env.config';
+import { sessionStorage } from 'storages';
 
 type MethodType = 'GET' | 'POST' | 'PATCH' | 'DELETE' | 'PUT';
 
@@ -9,11 +8,10 @@ type HeadersType = {
   'X-Refresh': string;
 };
 
-const useFetchBase = () => {
-  const dispatch = useAppDispatch();
-  const { access_token, refresh_token } = useAppSelector(
-    (state) => state.session
-  );
+const fetchBase = () => {
+  const { BASE_URL } = exportEnv;
+  const { access_token, refresh_token } =
+    sessionStorage.retrieveSessionStorage();
 
   const headers: HeadersType = {
     Authorization: access_token,
@@ -29,7 +27,7 @@ const useFetchBase = () => {
       });
 
       if (res.status === 401) {
-        dispatch(logout());
+        sessionStorage.removeSessionStorage();
 
         throw Error('Unauthorized');
       }
@@ -42,7 +40,7 @@ const useFetchBase = () => {
 
       return resJson;
     } catch (error) {
-      console.log('useFetchBase mutation', error);
+      console.log('useFetchBase mutation error', error);
     }
   };
 
@@ -53,7 +51,7 @@ const useFetchBase = () => {
     });
 
     if (res.status === 401) {
-      dispatch(logout());
+      sessionStorage.removeSessionStorage();
 
       throw new Error('Unauthorized');
     }
@@ -69,4 +67,4 @@ const useFetchBase = () => {
   };
 };
 
-export default useFetchBase;
+export default fetchBase;

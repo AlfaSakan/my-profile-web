@@ -1,4 +1,5 @@
 export { default as Button } from './button/Button.atom';
+export { default as Checkbox } from './checkbox/Checkbox.atom';
 export { default as Circle } from './circle/Circle.atom';
 export { default as Divider } from './divider/Divider.atom';
 export { default as Input } from './input/Input.atom';

@@ -1,15 +1,12 @@
-import { useAppDispatch } from 'app/hook/hook.app';
 import { PARTICIPANT_ROUTE } from 'constants/route.constant';
 import { Response } from 'models/response/response.model';
 import { User } from 'models/user/user.model';
-import useFetchBase from 'services/api/api.service';
-import { insertParticipant } from 'stores/participant/participant.store';
+import fetchBase from 'services/api/api.service';
 
-const useParticipantApi = () => {
-  const { query } = useFetchBase();
-  const dispatch = useAppDispatch();
+const participantService = () => {
+  const { query } = fetchBase();
 
-  const getListParticipant = async (chatRoomId: number) => {
+  const getListParticipant = async (chatRoomId: string) => {
     try {
       const res = (await query(
         `${PARTICIPANT_ROUTE}/${chatRoomId}`,
@@ -20,9 +17,9 @@ const useParticipantApi = () => {
         return;
       }
 
-      dispatch(insertParticipant(res.data));
+      return res;
     } catch (error) {
-      console.log('useParticipantApi getListParticipant', error);
+      console.log('useParticipantApi getListParticipant error', error);
     }
   };
 
@@ -31,4 +28,4 @@ const useParticipantApi = () => {
   };
 };
 
-export default useParticipantApi;
+export default participantService;

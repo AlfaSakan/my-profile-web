@@ -1,9 +1,7 @@
-import CloseIcon from '@material-ui/icons/Close';
 import { Button, Input, TextError } from 'components/atoms';
 import { MouseEventHandler } from 'react';
 
 interface IProps {
-  onClose?: () => void;
   onClickLogin?: MouseEventHandler<HTMLButtonElement>;
   onChangeName?: React.ChangeEventHandler<HTMLInputElement>;
   onChangePhoneNumber?: React.ChangeEventHandler<HTMLInputElement>;
@@ -14,7 +12,6 @@ interface IProps {
 }
 
 const Login: React.FC<IProps> = ({
-  onClose,
   onClickLogin,
   onChangeName,
   onChangePhoneNumber,
@@ -30,9 +27,6 @@ const Login: React.FC<IProps> = ({
     >
       <div className="flex items-center justify-between px-8 py-4 bg-secondary">
         <p>Login / Register</p>
-        <div onClick={onClose} className="cursor-pointer">
-          <CloseIcon />
-        </div>
       </div>
       <div className="flex flex-1 flex-col px-8 py-4 border-y gap-8">
         <div>

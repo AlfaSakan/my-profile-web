@@ -2,7 +2,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PeopleIcon from '@material-ui/icons/People';
 import SearchIcon from '@material-ui/icons/Search';
 import { Circle } from 'components/atoms';
-import React from 'react';
+import React, { memo } from 'react';
 
 interface IProps {
   onClickMenu?: () => void;
@@ -42,4 +42,4 @@ const HeaderBody: React.FC<IProps> = ({
   );
 };
 
-export default HeaderBody;
+export default memo(HeaderBody);

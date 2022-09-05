@@ -1,25 +1,28 @@
-import { useAppSelector } from 'app/hook/hook.app';
 import { Message } from 'components/atoms';
 import { COLORS_TAG } from 'constants/colors.constant';
 import { Message as MessageModel } from 'models/message/message.model';
+import { Participant } from 'models/participant/participant.model';
 import React from 'react';
 
 interface IProps {
   messages?: MessageModel[];
-  userId: number;
+  userId: string;
+  userData?: Participant[];
 }
 
-const colorUser = new Map<number, string>();
+const colorUser = new Map<string, string>();
 
-const MainBody: React.FC<IProps> = ({ messages = [], userId }) => {
-  const usersStore = useAppSelector((state) => state.participant);
-
+const MainBody: React.FC<IProps> = ({
+  messages = [],
+  userId,
+  userData = [],
+}) => {
   return (
-    <div className="flex flex-col-reverse flex-1 px-20 gap-1 pb-5">
+    <div className="flex flex-col-reverse flex-1 px-20 gap-1 pb-5 overflow-y-scroll">
       {messages.map((message, index) => {
         const userMessage = message.sender_id === userId;
 
-        const sender = usersStore.find(
+        const sender = userData.find(
           (user) => user.user_id === message.sender_id
         );
 
@@ -37,7 +40,7 @@ const MainBody: React.FC<IProps> = ({ messages = [], userId }) => {
           >
             <Message
               message={message.message}
-              time={123}
+              time={message.created_at}
               isLeft={!userMessage}
               sender={sender}
               senderColor={colorUser.get(message.sender_id)}
@@ -45,31 +48,6 @@ const MainBody: React.FC<IProps> = ({ messages = [], userId }) => {
           </div>
         );
       })}
-      {/* <Message
-        message="scasc askcnalsc asckaskcnasc aksncaknsc kakcsnck scasc askcnalsc
-        asckaskcnasc aksncaknsc kakcsnck"
-        time={123}
-      />
-      <div className="self-end">
-        <Message message="a" time={123} isLeft={false} />
-      </div>
-      <div className="self-end">
-        <Message
-          message="scasc askcnalsc asckaskcnasc aksncaknsc kakcsnck scasc askcnalsc
-        asckaskcnasc aksncaknsc kakcsnck"
-          time={123}
-          isLeft={false}
-        />
-      </div>
-      <Message message="a" time={123} />
-      <Message
-        message="scasc askcnalsc asckaskcnasc aksncaknsc kakcsnck scasc askcnalsc
-        asckaskcnasc aksncaknsc kakcsnck"
-        time={123}
-      />
-      <div className="self-end">
-        <Message message="a" time={123} isLeft={false} />
-      </div> */}
     </div>
   );
 };

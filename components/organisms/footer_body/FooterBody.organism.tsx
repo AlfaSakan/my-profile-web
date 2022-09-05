@@ -3,18 +3,20 @@ import AttachFileIcon from '@material-ui/icons/AttachFile';
 import MoodIcon from '@material-ui/icons/Mood';
 import SendIcon from '@material-ui/icons/Send';
 import { Input } from 'components/atoms';
-import React from 'react';
+import React, { memo } from 'react';
 
 interface IProps {
   onChange: (val: string) => void;
   onSubmitMessage: () => void;
   messageValue: string;
+  isLoading?: boolean;
 }
 
 const FooterBody: React.FC<IProps> = ({
   onChange,
   onSubmitMessage,
   messageValue,
+  isLoading = false,
 }) => {
   return (
     <div className="flex items-center justify-between bg-secondary py-2 px-6 gap-4">
@@ -25,11 +27,14 @@ const FooterBody: React.FC<IProps> = ({
         <AttachFileIcon style={{ fill: '#2C3333' }} />
       </div>
       <Input onChange={(e) => onChange(e.target.value)} value={messageValue} />
-      <div className="cursor-pointer" onClick={onSubmitMessage}>
-        <SendIcon style={{ fill: '#2C3333' }} />
+      <div
+        className="cursor-pointer"
+        onClick={isLoading ? () => {} : onSubmitMessage}
+      >
+        <SendIcon style={{ fill: isLoading ? '#F7ECDE' : '#2C3333' }} />
       </div>
     </div>
   );
 };
 
-export default FooterBody;
+export default memo(FooterBody);

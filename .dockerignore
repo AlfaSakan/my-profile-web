@@ -1,0 +1,11 @@
+**/node_modules
+.eslintrc.json
+.next
+.husky
+.vscode
+.gitignore
+.npmrc
+.nvmrc
+.prettierignore
+.prettierrc
+commitlint.config.js

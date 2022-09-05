@@ -1,42 +1,45 @@
-import { useAppDispatch } from 'app/hook/hook.app';
 import { CHAT_ROOM_ROUTE } from 'constants/route.constant';
 import { ChatRoom } from 'models/chat_room/chatRoom.model';
 import { Response } from 'models/response/response.model';
-import useFetchBase from 'services/api/api.service';
-import {
-  insertChatRoom,
-  insertChatRoomsList,
-  updateChatRoom,
-} from 'stores/chat_room/chatRoom.store';
+import fetchBase from 'services/api/api.service';
 
 interface ChatRoomParams {
   image_url?: string;
   description?: string;
   name: string;
   type?: string;
+  participants_id: string[];
 }
 
-const useChatRoomApi = () => {
-  const { mutation, query } = useFetchBase();
-  const dispatch = useAppDispatch();
+const chatRoomService = () => {
+  const { mutation, query } = fetchBase();
 
   const getChatRoomService = async () => {
     try {
       const res = (await query(CHAT_ROOM_ROUTE, 'GET')) as Response<ChatRoom[]>;
 
-      console.log('KESINI ===> ', res);
-
-      if (res.status === 200 && res.data !== null) {
-        dispatch(insertChatRoomsList(res.data));
-      }
+      return res;
     } catch (error) {
-      console.log('useChatRoomApi getChatRoomService', error);
+      console.log('useChatRoomApi getChatRoomService Error', error);
+    }
+  };
+
+  const getChatRoomByIdService = async (chatRoomId: string) => {
+    try {
+      const res = (await query(
+        `${CHAT_ROOM_ROUTE}/${chatRoomId}`,
+        'GET'
+      )) as Response<ChatRoom>;
+
+      return res;
+    } catch (error) {
+      console.log('useChatRoomApi getChatRoomService Error', error);
     }
   };
 
   const patchChatRoomService = async (
     body: ChatRoomParams,
-    chatRoomId: number
+    chatRoomId: string
   ) => {
     try {
       const res = (await mutation(
@@ -45,9 +48,7 @@ const useChatRoomApi = () => {
         body
       )) as Response<ChatRoom>;
 
-      if (res.status === 200) {
-        dispatch(updateChatRoom(body));
-      }
+      return res;
     } catch (error) {
       console.log('useChatRoomApi patchChatRoomService', error);
     }
@@ -61,11 +62,9 @@ const useChatRoomApi = () => {
         body
       )) as Response<ChatRoom>;
 
-      if (res.status === 200) {
-        dispatch(insertChatRoom(res.data));
-      }
+      return res;
     } catch (error) {
-      console.log('useChatRoomApi postChatRoomService', error);
+      console.log('useChatRoomApi postChatRoomService error', error);
     }
   };
 
@@ -73,7 +72,8 @@ const useChatRoomApi = () => {
     getChatRoomService,
     patchChatRoomService,
     postChatRoomService,
+    getChatRoomByIdService,
   };
 };
 
-export default useChatRoomApi;
+export default chatRoomService;
