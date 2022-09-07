@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatRoom component test should render correctly 1`] = `
+<div
+  className="bg-primary flex flex-col w-1/2 h-1/2 rounded-2xl"
+  onClick={[Function]}
+>
+  <div
+    className="flex items-center justify-between px-8 py-4 bg-secondary rounded-t-2xl"
+  >
+    <p>
+      Buat Chat Room Baru
+    </p>
+    <div
+      className="cursor-pointer"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="flex flex-1 flex-col px-8 py-4 border-y justify-between"
+  >
+    <div>
+      <p>
+        Nama Chat Room
+      </p>
+      <input
+        className="w-full focus:outline-none rounded-md py-2 px-4 border py-3 mt-2"
+        onChange={[Function]}
+        placeholder="Type a message"
+        type="text"
+        value="name value"
+      />
+    </div>
+    <div>
+      <p>
+        Deskripsi
+      </p>
+      <input
+        className="w-full focus:outline-none rounded-md py-2 px-4 border py-3 mt-2"
+        onChange={[Function]}
+        placeholder="Type a message"
+        type="text"
+        value="description"
+      />
+    </div>
+    <div
+      className="flex flex-col relative"
+    >
+      <p>
+        Anggota
+      </p>
+      <div
+        className="border py-3 px-4 bg-white rounded-md flex gap-2 items-center cursor-pointer h-12 mt-2"
+        onClick={[Function]}
+      />
+    </div>
+  </div>
+  <div
+    className="flex items-center justify-end px-8 py-4"
+  >
+    <button
+      className="flex items-center justify-center w-32 h-12 rounded-lg bg-secondary"
+    >
+      <p>
+        Login
+      </p>
+    </button>
+  </div>
+</div>
+`;

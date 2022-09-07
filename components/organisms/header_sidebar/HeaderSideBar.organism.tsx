@@ -18,7 +18,11 @@ const HeaderSideBar: React.FC<IProps> = ({ onClickMenu }) => {
         <div>
           <ChatIcon style={{ fill: '#2C3333' }} />
         </div>
-        <div className="cursor-pointer" onClick={onClickMenu}>
+        <div
+          className="cursor-pointer"
+          onClick={onClickMenu}
+          data-testid="header-side-bar-menu"
+        >
           <MoreVertIcon style={{ fill: '#2C3333' }} />
         </div>
       </div>

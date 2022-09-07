@@ -2,8 +2,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { Button } from 'components/atoms';
 import { Participant } from 'models/participant/participant.model';
 import { useState } from 'react';
-// import { UserStore } from 'stores/user/user.store';
-import Dropdown from '../dropdown/Dropdown.atom';
+import Dropdown from '../dropdown/Dropdown.molecule';
 import InputField from '../input_field/InputField.molecule';
 
 interface Props {

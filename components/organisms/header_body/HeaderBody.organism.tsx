@@ -34,7 +34,11 @@ const HeaderBody: React.FC<IProps> = ({
         <div className="mr-5">
           <SearchIcon style={{ fill: '#2C3333' }} />
         </div>
-        <div onClick={onClickMenu} className="cursor-pointer">
+        <div
+          onClick={onClickMenu}
+          className="cursor-pointer"
+          data-testid="header-body-menu"
+        >
           <MoreVertIcon style={{ fill: '#2C3333' }} />
         </div>
       </div>

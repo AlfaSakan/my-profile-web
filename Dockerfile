@@ -29,7 +29,8 @@ COPY models ./models
 COPY pages ./pages
 COPY public ./public
 COPY services ./services
-COPY stores ./stores
+COPY hooks ./hooks
+COPY storages ./storages
 COPY styles ./styles
 COPY utils ./utils
 COPY view_model ./view_model

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`buttom component test should render correctly 1`] = `
+<button
+  className="flex items-center justify-center w-32 h-12 rounded-lg bg-secondary"
+  onClick={[Function]}
+>
+  <p>
+    Text
+  </p>
+</button>
+`;
+
+exports[`buttom component test should render correctly 2`] = `
+<button
+  className="flex items-center justify-center w-32 h-12 rounded-lg bg-secondary"
+>
+  <p>
+    Text
+  </p>
+</button>
+`;

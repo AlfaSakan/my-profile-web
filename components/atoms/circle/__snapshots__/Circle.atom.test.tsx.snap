@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`circle component test should render correctly 1`] = `
+<div
+  className="rounded-full bg-gray-300 mr-4 flex items-center justify-center undefined"
+>
+  <p>
+    test
+  </p>
+</div>
+`;

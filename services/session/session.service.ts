@@ -25,7 +25,7 @@ const sessionService = () => {
     }
   };
 
-  const deleteSession = async (sessionId: number) => {
+  const deleteSession = async (sessionId: string) => {
     try {
       const res = (await query(
         `${SESSION_ROUTE}/${sessionId}`,

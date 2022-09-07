@@ -30,6 +30,7 @@ const FooterBody: React.FC<IProps> = ({
       <div
         className="cursor-pointer"
         onClick={isLoading ? () => {} : onSubmitMessage}
+        data-testid="footer-body-submit"
       >
         <SendIcon style={{ fill: isLoading ? '#F7ECDE' : '#2C3333' }} />
       </div>

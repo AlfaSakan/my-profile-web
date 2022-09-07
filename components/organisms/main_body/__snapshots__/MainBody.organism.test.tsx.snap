@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderBody component test should render correctly 1`] = `
+<div
+  className="flex flex-col-reverse flex-1 px-20 gap-1 pb-5 overflow-y-scroll"
+>
+  <div
+    className="self-end"
+  >
+    <div
+      className="bg-white h-fit min-w-fitCostume max-w-xl w-max px-2 py-1 relative rounded-md text-sm pr-16"
+    >
+      <div
+        className="absolute -top-2 -right-[0.9rem]"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root"
+          focusable="false"
+          style={
+            Object {
+              "fill": "white",
+              "fontSize": 30,
+            }
+          }
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M10 17l5-5-5-5v10z"
+          />
+        </svg>
+      </div>
+      <p>
+        123456789
+      </p>
+      <div
+        className="absolute right-2 flex items-center bottom-0 gap-1"
+      >
+        <p
+          className="text-xs"
+        >
+          17:17
+        </p>
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root"
+          focusable="false"
+          style={
+            Object {
+              "fontSize": 14,
+            }
+          }
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`HeaderBody component test should render correctly 2`] = `
+<div
+  className="flex flex-col-reverse flex-1 px-20 gap-1 pb-5 overflow-y-scroll"
+>
+  <div
+    className="self-end"
+  >
+    <div
+      className="bg-white h-fit min-w-fitCostume max-w-xl w-max px-2 py-1 relative rounded-md text-sm pr-16"
+    >
+      <div
+        className="absolute -top-2 -right-[0.9rem]"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root"
+          focusable="false"
+          style={
+            Object {
+              "fill": "white",
+              "fontSize": 30,
+            }
+          }
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M10 17l5-5-5-5v10z"
+          />
+        </svg>
+      </div>
+      <p>
+        123456789
+      </p>
+      <div
+        className="absolute right-2 flex items-center bottom-0 gap-1"
+      >
+        <p
+          className="text-xs"
+        >
+          17:17
+        </p>
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root"
+          focusable="false"
+          style={
+            Object {
+              "fontSize": 14,
+            }
+          }
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

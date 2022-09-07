@@ -1,7 +1,8 @@
 import { exportEnv } from 'configs/env/env.config';
 import { sessionStorage } from 'storages';
 
-type MethodType = 'GET' | 'POST' | 'PATCH' | 'DELETE' | 'PUT';
+type MutationMethod = 'POST' | 'PATCH' | 'DELETE' | 'PUT';
+type QueryMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE' | 'PUT';
 
 type HeadersType = {
   Authorization: string;
@@ -18,7 +19,11 @@ const fetchBase = () => {
     'X-Refresh': refresh_token,
   };
 
-  const mutation = async (route: string, method: MethodType, body: object) => {
+  const mutation = async (
+    route: string,
+    method: MutationMethod,
+    body: object
+  ) => {
     try {
       const res = await fetch(`${BASE_URL}${route}`, {
         method,
@@ -44,7 +49,7 @@ const fetchBase = () => {
     }
   };
 
-  const query = async (route: string, method: MethodType) => {
+  const query = async (route: string, method: QueryMethod) => {
     const res = await fetch(`${BASE_URL}${route}`, {
       method,
       headers,

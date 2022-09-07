@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputField component test should render correctly 1`] = `
+<div>
+  <p>
+    input
+  </p>
+  <input
+    className="w-full focus:outline-none rounded-md py-2 px-4 border py-3 mt-2"
+    onChange={[Function]}
+    placeholder="Type a message"
+    type="text"
+    value="test"
+  />
+  <div
+    className="flex items-center absolute mt-1"
+  >
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root"
+      focusable="false"
+      style={
+        Object {
+          "fill": "rgb(239 68 68)",
+          "fontSize": 14,
+          "marginRight": 4,
+        }
+      }
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+      />
+    </svg>
+    <p
+      className="text-red-500 text-xs"
+    >
+      text error
+    </p>
+  </div>
+</div>
+`;

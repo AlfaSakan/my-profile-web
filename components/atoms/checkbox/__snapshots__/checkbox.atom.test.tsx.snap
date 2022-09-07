@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`buttom component test should render correctly 1`] = `
+<div
+  className="flex items-center gap-2 cursor-pointer"
+  onClick={[Function]}
+>
+  <input
+    checked={true}
+    className="cursor-pointer"
+    id="label"
+    name="label"
+    readOnly={true}
+    type="checkbox"
+    value="label"
+  />
+  <label
+    className="cursor-pointer"
+    id="label"
+  >
+    Label
+  </label>
+</div>
+`;
+
+exports[`buttom component test should render correctly 2`] = `
+<div
+  className="flex items-center gap-2 cursor-pointer"
+  onClick={[Function]}
+>
+  <input
+    checked={false}
+    className="cursor-pointer"
+    id="label"
+    name="label"
+    readOnly={true}
+    type="checkbox"
+    value="label"
+  />
+  <label
+    className="cursor-pointer"
+    id="label"
+  >
+    Label
+  </label>
+</div>
+`;

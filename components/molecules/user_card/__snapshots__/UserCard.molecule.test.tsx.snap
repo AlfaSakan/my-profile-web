@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserCard component test should render correctly 1`] = `
+<div
+  className="flex items-center justify-between p-3 cursor-pointer"
+>
+  <div
+    className="flex"
+  >
+    <div
+      className="rounded-full bg-gray-300 mr-4 flex items-center justify-center h-12 w-12"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root"
+        focusable="false"
+        style={
+          Object {
+            "fill": "white",
+          }
+        }
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+        />
+      </svg>
+    </div>
+    <div
+      className="flex flex-col"
+    >
+      <p>
+        admin
+      </p>
+      <p
+        className="text-xs mt-1"
+      >
+        Offline
+      </p>
+    </div>
+  </div>
+  <div
+    className="p-1 bg-secondary rounded-full"
+  >
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root"
+      focusable="false"
+      style={
+        Object {
+          "fill": "#F7ECDE",
+        }
+      }
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`UserCard component test should render correctly 2`] = `
+<div
+  className="flex items-center justify-between p-3 cursor-pointer"
+>
+  <div
+    className="flex"
+  >
+    <div
+      className="rounded-full bg-gray-300 mr-4 flex items-center justify-center h-12 w-12"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root"
+        focusable="false"
+        style={
+          Object {
+            "fill": "white",
+          }
+        }
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+        />
+      </svg>
+    </div>
+    <div
+      className="flex flex-col"
+    >
+      <p>
+        admin
+      </p>
+      <p
+        className="text-xs mt-1"
+      >
+        Offline
+      </p>
+    </div>
+  </div>
+  <div
+    className="p-1 bg-red-500 rounded-full"
+  >
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root"
+      focusable="false"
+      style={
+        Object {
+          "fill": "#F7ECDE",
+        }
+      }
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </div>
+</div>
+`;

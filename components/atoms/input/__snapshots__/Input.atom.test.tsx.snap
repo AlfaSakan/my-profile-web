@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input component test should render correctly 1`] = `
+<input
+  className="w-full focus:outline-none rounded-md py-2 px-4 "
+  placeholder="Type a message"
+  type="text"
+/>
+`;
+
+exports[`input component test should render correctly with props 1`] = `
+<input
+  className="w-full focus:outline-none rounded-md py-2 px-4 "
+  placeholder="Type a message"
+  type="text"
+  value="test"
+/>
+`;

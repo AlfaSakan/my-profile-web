@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`divider component test should render correctly 1`] = `
+<div
+  className="border-[0.5px] w-[calc(100%-87px)] self-end mr-3"
+/>
+`;

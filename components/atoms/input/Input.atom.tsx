@@ -4,7 +4,7 @@ interface IProps {
   value?: string;
 }
 
-const Input: React.FC<IProps> = ({ className, onChange, value }) => {
+const Input: React.FC<IProps> = ({ className = '', onChange, value }) => {
   return (
     <input
       type="text"

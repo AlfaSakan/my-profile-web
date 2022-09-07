@@ -13,7 +13,7 @@ export interface MessageParams {
 const messageService = () => {
   const { query, mutation } = fetchBase();
 
-  const getMessages = async (chatRoomId: number) => {
+  const getMessages = async (chatRoomId: string) => {
     try {
       const res = (await query(
         `${MESSAGE_ROUTE}/${chatRoomId}`,

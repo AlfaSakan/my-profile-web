@@ -1,4 +1,5 @@
 export { default as ChatRoom } from './chat_room/ChatRoom.molecule';
+export { default as Dropdown } from './dropdown/Dropdown.molecule';
 export { default as InputField } from './input_field/InputField.molecule';
 export { default as Login } from './login/Login.molecule';
 export { default as MessageCard } from './message_card/MessageCard.molecule';

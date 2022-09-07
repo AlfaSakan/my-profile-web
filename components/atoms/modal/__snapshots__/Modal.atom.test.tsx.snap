@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`modal component test should render correctly 1`] = `
+<div
+  className="fixed h-full w-full bg-black-200 top-0 flex items-center justify-center"
+>
+  <p>
+    mlampclmspc
+  </p>
+</div>
+`;
