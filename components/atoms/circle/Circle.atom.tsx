@@ -8,7 +8,7 @@ interface IProps {
 const Circle: React.FC<IProps> = ({ children, className }) => {
   return (
     <div
-      className={`rounded-full bg-gray-300 mr-4 flex items-center justify-center ${className}`}
+      className={`rounded-full bg-gray-300 mr-4 flex items-center justify-center overflow-hidden ${className}`}
     >
       {children}
     </div>

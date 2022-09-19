@@ -1,7 +1,6 @@
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PeopleIcon from '@material-ui/icons/People';
-import SearchIcon from '@material-ui/icons/Search';
-import { Circle } from 'components/atoms';
+import { Button, Circle } from 'components/atoms';
+import { Search } from 'components/molecules';
 import React, { memo } from 'react';
 
 interface IProps {
@@ -15,7 +14,7 @@ const HeaderBody: React.FC<IProps> = ({
   onClickMenu,
   name,
   status,
-  isFocus = false,
+  isFocus = true,
 }) => {
   return (
     <div className="flex items-center bg-secondary p-3 justify-between h-16">
@@ -32,14 +31,14 @@ const HeaderBody: React.FC<IProps> = ({
       </div>
       <div className="flex items-center">
         <div className="mr-5">
-          <SearchIcon style={{ fill: '#2C3333' }} />
+          <Search.Dynamic isActive={false} classname="w-96" />
         </div>
         <div
           onClick={onClickMenu}
           className="cursor-pointer"
           data-testid="header-body-menu"
         >
-          <MoreVertIcon style={{ fill: '#2C3333' }} />
+          <Button text="Keluar" isColorPrimary height={30} width={100} />
         </div>
       </div>
     </div>

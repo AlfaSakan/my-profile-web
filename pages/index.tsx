@@ -42,7 +42,12 @@ const Home: NextPage<IProps> = () => {
     <div className="flex h-screen w-screen">
       {/* #region SIDEBAR */}
       <div className="flex flex-col shrink grow-[0.2]">
-        <HeaderSideBar onClickMenu={modalRoomHook.openModalChatRoom} />
+        <HeaderSideBar
+          onClickMenu={modalRoomHook.openModalChatRoom}
+          name={userHook.user.name}
+          status={userHook.user.status}
+          imgUrl="https://image.winudf.com/v2/image/Y29tLmJhbGVmb290Lk1vbmtleURMdWZmeVdhbGxwYXBlcl9zY3JlZW5fMF8xNTI0NTE5MTEwXzAyOA/screen-0.jpg?fakeurl=1&type=.webp"
+        />
         <div className="p-2 border-b bg-secondary">
           <Search
             value={searchHook.search}
@@ -88,6 +93,7 @@ const Home: NextPage<IProps> = () => {
                       name={room.name}
                       dateUnix={room.updated_at}
                       lastMessage={messages[0]?.message || 'New Group'}
+                      imgUrl={room.image_url}
                     />
                     <Divider />
                   </div>

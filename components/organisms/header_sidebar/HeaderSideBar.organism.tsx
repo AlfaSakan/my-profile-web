@@ -1,19 +1,30 @@
 import ChatIcon from '@material-ui/icons/Chat';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import PersonIcon from '@material-ui/icons/Person';
-import { Circle } from 'components/atoms';
+import { Button } from 'components/atoms';
+import { ProfilePicture } from 'components/molecules';
 import React, { memo } from 'react';
 
 interface IProps {
   onClickMenu?(): void;
+  name?: string;
+  status?: string;
+  imgUrl?: string;
 }
 
-const HeaderSideBar: React.FC<IProps> = ({ onClickMenu }) => {
+const HeaderSideBar: React.FC<IProps> = ({
+  onClickMenu,
+  name,
+  status,
+  imgUrl,
+}) => {
   return (
     <div className="flex items-center bg-secondary p-3 justify-between border-r border-b">
-      <Circle className="h-10 w-10">
-        <PersonIcon style={{ fill: 'white' }} />
-      </Circle>
+      <div className="flex items-center">
+        <ProfilePicture imgUrl={imgUrl} />
+        <div className="flex flex-col">
+          <p>{name}</p>
+          <p>{status}</p>
+        </div>
+      </div>
       <div className="flex items-center gap-6">
         <div>
           <ChatIcon style={{ fill: '#2C3333' }} />
@@ -23,7 +34,7 @@ const HeaderSideBar: React.FC<IProps> = ({ onClickMenu }) => {
           onClick={onClickMenu}
           data-testid="header-side-bar-menu"
         >
-          <MoreVertIcon style={{ fill: '#2C3333' }} />
+          <Button text="Buat Group" isColorPrimary height={30} width={100} />
         </div>
       </div>
     </div>

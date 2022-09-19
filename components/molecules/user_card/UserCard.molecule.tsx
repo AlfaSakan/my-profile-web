@@ -14,7 +14,11 @@ const UserCard: React.FC<Props> = ({ user, isFriend = false }) => {
     <div className="flex items-center justify-between p-3 cursor-pointer">
       <div className="flex">
         <Circle className="h-12 w-12">
-          <PersonIcon style={{ fill: 'white' }} />
+          {user?.image_url ? (
+            <img src={user.image_url} alt="user-profile" />
+          ) : (
+            <PersonIcon style={{ fill: 'white' }} />
+          )}
         </Circle>
         <div className="flex flex-col">
           <p>{user.name}</p>

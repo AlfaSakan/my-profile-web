@@ -11,3 +11,4 @@
 commitlint.config.js
 **/__snapshots__
 **/*.test.*
+**/test

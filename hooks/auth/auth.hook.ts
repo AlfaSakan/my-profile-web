@@ -107,12 +107,19 @@ const useAuthHook = () => {
     if (loginForm.name) {
       setLoginError((prev) => ({ ...prev, name: '' }));
     }
+
+    return () => {
+      setLoginError({ name: '', phone_number: '' });
+    };
   }, [loginForm.name]);
 
   useEffect(() => {
     if (loginForm.phone_number.length > 9) {
       setLoginError((prev) => ({ ...prev, phone_number: '' }));
     }
+    return () => {
+      setLoginError({ name: '', phone_number: '' });
+    };
   }, [loginForm.phone_number]);
 
   return {

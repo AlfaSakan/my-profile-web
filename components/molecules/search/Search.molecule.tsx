@@ -1,10 +1,11 @@
 import SearchIcon from '@material-ui/icons/Search';
-import React, { memo } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface IProps {
   classname?: string;
   value?: string;
   onChange?(_: string): void;
+  isActive?: boolean;
 }
 
 const Search: React.FC<IProps> = ({
@@ -30,4 +31,50 @@ const Search: React.FC<IProps> = ({
   );
 };
 
-export default memo(Search);
+const Dynamic: React.FC<IProps> = ({
+  classname,
+  isActive = false,
+  onChange = () => {},
+  value,
+}) => {
+  const [active, setActive] = useState(false);
+
+  const activeHandler = () => {
+    setActive(!active);
+  };
+
+  useEffect(() => {
+    setActive(isActive);
+
+    return () => {
+      setActive(false);
+    };
+  }, [isActive]);
+
+  if (!active)
+    return (
+      <div onClick={activeHandler} className="cursor-pointer">
+        <SearchIcon />
+      </div>
+    );
+
+  return (
+    <div
+      className={`flex p-2 pl-3 bg-transparent items-center border-b ${classname}`}
+    >
+      <input
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        type="text"
+        className="w-full focus:outline-none bg-transparent h-full text-dark"
+        placeholder="Search or start new chat"
+        autoFocus
+      />
+      <div className="mr-4">
+        <SearchIcon style={{ fontSize: 20, fill: '#2C3333' }} />
+      </div>
+    </div>
+  );
+};
+
+export default Object.assign(Search, { Dynamic });
