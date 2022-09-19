@@ -2,7 +2,7 @@
 
 exports[`circle component test should render correctly 1`] = `
 <div
-  className="rounded-full bg-gray-300 mr-4 flex items-center justify-center undefined"
+  className="rounded-full bg-gray-300 mr-4 flex items-center justify-center overflow-hidden undefined"
 >
   <p>
     test

@@ -5,23 +5,33 @@ exports[`HeaderBody component test should render correctly 1`] = `
   className="flex items-center bg-secondary p-3 justify-between border-r border-b"
 >
   <div
-    className="rounded-full bg-gray-300 mr-4 flex items-center justify-center h-10 w-10"
+    className="flex items-center"
   >
-    <svg
-      aria-hidden={true}
-      className="MuiSvgIcon-root"
-      focusable="false"
-      style={
-        Object {
-          "fill": "white",
-        }
-      }
-      viewBox="0 0 24 24"
+    <div
+      className="rounded-full bg-gray-300 mr-4 flex items-center justify-center overflow-hidden h-10 w-10"
     >
-      <path
-        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-      />
-    </svg>
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root"
+        focusable="false"
+        style={
+          Object {
+            "fill": "white",
+          }
+        }
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+        />
+      </svg>
+    </div>
+    <div
+      className="flex flex-col"
+    >
+      <p />
+      <p />
+    </div>
   </div>
   <div
     className="flex items-center gap-6"
@@ -48,21 +58,19 @@ exports[`HeaderBody component test should render correctly 1`] = `
       data-testid="header-side-bar-menu"
       onClick={[MockFunction]}
     >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
+      <button
+        className="flex items-center justify-center w-32 h-12 rounded-lg bg-primary"
         style={
           Object {
-            "fill": "#2C3333",
+            "height": 30,
+            "width": 100,
           }
         }
-        viewBox="0 0 24 24"
       >
-        <path
-          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
+        <p>
+          Buat Group
+        </p>
+      </button>
     </div>
   </div>
 </div>

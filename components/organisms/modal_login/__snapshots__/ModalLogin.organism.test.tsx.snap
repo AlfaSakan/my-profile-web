@@ -101,6 +101,12 @@ exports[`HeaderBody component test should render correctly 1`] = `
       <button
         className="flex items-center justify-center w-32 h-12 rounded-lg bg-secondary"
         onClick={[MockFunction]}
+        style={
+          Object {
+            "height": undefined,
+            "width": undefined,
+          }
+        }
       >
         <p>
           Login

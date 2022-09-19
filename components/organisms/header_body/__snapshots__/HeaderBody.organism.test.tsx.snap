@@ -8,7 +8,7 @@ exports[`HeaderBody component test should render correctly 1`] = `
     className="flex items-center"
   >
     <div
-      className="rounded-full bg-gray-300 mr-4 flex items-center justify-center h-10 w-10"
+      className="rounded-full bg-gray-300 mr-4 flex items-center justify-center overflow-hidden h-10 w-10"
     >
       <svg
         aria-hidden={true}
@@ -45,42 +45,40 @@ exports[`HeaderBody component test should render correctly 1`] = `
     <div
       className="mr-5"
     >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
-        style={
-          Object {
-            "fill": "#2C3333",
-          }
-        }
-        viewBox="0 0 24 24"
+      <div
+        className="cursor-pointer"
+        onClick={[Function]}
       >
-        <path
-          d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-        />
-      </svg>
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+          />
+        </svg>
+      </div>
     </div>
     <div
       className="cursor-pointer"
       data-testid="header-body-menu"
       onClick={[MockFunction]}
     >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root"
-        focusable="false"
+      <button
+        className="flex items-center justify-center w-32 h-12 rounded-lg bg-primary"
         style={
           Object {
-            "fill": "#2C3333",
+            "height": 30,
+            "width": 100,
           }
         }
-        viewBox="0 0 24 24"
       >
-        <path
-          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
+        <p>
+          Keluar
+        </p>
+      </button>
     </div>
   </div>
 </div>

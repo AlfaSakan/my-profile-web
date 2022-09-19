@@ -8,7 +8,7 @@ exports[`UserCard component test should render correctly 1`] = `
     className="flex"
   >
     <div
-      className="rounded-full bg-gray-300 mr-4 flex items-center justify-center h-12 w-12"
+      className="rounded-full bg-gray-300 mr-4 flex items-center justify-center overflow-hidden h-12 w-12"
     >
       <svg
         aria-hidden={true}
@@ -69,7 +69,7 @@ exports[`UserCard component test should render correctly 2`] = `
     className="flex"
   >
     <div
-      className="rounded-full bg-gray-300 mr-4 flex items-center justify-center h-12 w-12"
+      className="rounded-full bg-gray-300 mr-4 flex items-center justify-center overflow-hidden h-12 w-12"
     >
       <svg
         aria-hidden={true}
