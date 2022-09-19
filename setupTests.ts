@@ -8,6 +8,6 @@ import { TextDecoder, TextEncoder } from 'util';
 
 loadEnvConfig(process.cwd());
 global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
+(global as any).TextDecoder = TextDecoder;
 
 require('jest-fetch-mock').enableMocks();
