@@ -1,5 +1,5 @@
 import ChatIcon from '@material-ui/icons/Chat';
-import { Button } from 'components/atoms';
+import { Button, Text } from 'components/atoms';
 import { ProfilePicture } from 'components/molecules';
 import React, { memo } from 'react';
 
@@ -21,8 +21,8 @@ const HeaderSideBar: React.FC<IProps> = ({
       <div className="flex items-center">
         <ProfilePicture imgUrl={imgUrl} />
         <div className="flex flex-col">
-          <p>{name}</p>
-          <p>{status}</p>
+          <Text className="font-semibold">{name}</Text>
+          <Text.body2 className="text-slate-500">{status}</Text.body2>
         </div>
       </div>
       <div className="flex items-center gap-6">

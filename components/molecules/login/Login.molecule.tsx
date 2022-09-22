@@ -1,4 +1,4 @@
-import { Button, Input, TextError } from 'components/atoms';
+import { Button, Input, Text, TextError } from 'components/atoms';
 import { MouseEventHandler } from 'react';
 
 interface IProps {
@@ -23,14 +23,14 @@ const Login: React.FC<IProps> = ({
   return (
     <div
       onClick={(e) => e.stopPropagation()}
-      className="w-1/2 h-1/2 rounded-2xl flex flex-col overflow-hidden bg-white"
+      className="md:w-1/2 md:mx-0 h-1/2 w-full mx-10 rounded-2xl flex flex-col overflow-hidden bg-white"
     >
       <div className="flex items-center justify-between px-8 py-4 bg-secondary">
-        <p>Login / Register</p>
+        <Text.body1>Login / Register</Text.body1>
       </div>
       <div className="flex flex-1 flex-col px-8 py-4 border-y gap-8">
         <div>
-          <p>Nama</p>
+          <Text.body1>Nama</Text.body1>
           <Input
             className="border py-3 mt-2"
             onChange={onChangeName}
@@ -39,7 +39,7 @@ const Login: React.FC<IProps> = ({
           {textErrorName && <TextError errorMessage={textErrorName} />}
         </div>
         <div>
-          <p>Nomor Handphone</p>
+          <Text.body1>Nomor Handphone</Text.body1>
           <Input
             className="border py-3 mt-2"
             onChange={onChangePhoneNumber}

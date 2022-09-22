@@ -5,4 +5,5 @@ export { default as Divider } from './divider/Divider.atom';
 export { default as Input } from './input/Input.atom';
 export { default as Message } from './message/Message.atom';
 export { default as Modal } from './modal/Modal.atom';
+export { default as Text } from './text/Text.atom';
 export { default as TextError } from './text_error/TextError.atom';

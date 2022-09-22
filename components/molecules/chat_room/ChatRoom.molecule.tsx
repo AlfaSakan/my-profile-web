@@ -1,5 +1,5 @@
 import CloseIcon from '@material-ui/icons/Close';
-import { Button } from 'components/atoms';
+import { Button, Text } from 'components/atoms';
 import { Participant } from 'models/participant/participant.model';
 import { useState } from 'react';
 import Dropdown from '../dropdown/Dropdown.molecule';
@@ -49,14 +49,14 @@ const ChatRoom: React.FC<Props> = ({
 
   return (
     <div
-      className="bg-primary flex flex-col w-1/2 h-1/2 rounded-2xl"
+      className="bg-primary flex flex-col md:w-1/2 md:mx-0 h-1/2 rounded-2xl w-full mx-10"
       onClick={(e) => {
         toggleDropdown(false);
         e.stopPropagation();
       }}
     >
       <div className="flex items-center justify-between px-8 py-4 bg-secondary rounded-t-2xl">
-        <p>Buat Chat Room Baru</p>
+        <Text.body1>Buat Chat Room Baru</Text.body1>
         <div onClick={onClose} className="cursor-pointer">
           <CloseIcon />
         </div>
@@ -75,7 +75,7 @@ const ChatRoom: React.FC<Props> = ({
           textError={descError}
         />
         <div className="flex flex-col relative">
-          <p>Anggota</p>
+          <Text.body1>Anggota</Text.body1>
           <div
             className="border py-3 px-4 bg-white rounded-md flex gap-2 items-center cursor-pointer h-12 mt-2"
             onClick={(e) => {
@@ -100,7 +100,7 @@ const ChatRoom: React.FC<Props> = ({
                   >
                     <CloseIcon style={{ fontSize: 14 }} />
                   </div>
-                  <p>{user.name}</p>
+                  <Text.body1>{user.name}</Text.body1>
                 </div>
               );
             })}

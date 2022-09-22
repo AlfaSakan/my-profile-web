@@ -1,3 +1,4 @@
+import { Text } from 'components/atoms';
 import { convertNumberToTime } from 'utils/converter.util';
 import ProfilePicture from '../profile_picture/ProfilePicture.molecule';
 
@@ -19,12 +20,12 @@ const MessageCard: React.FC<IProps> = ({
       <div className="flex">
         <ProfilePicture imgUrl={imgUrl} />
         <div className="flex flex-col">
-          <p>{name}</p>
-          <p className="text-xs mt-1">{lastMessage}</p>
+          <Text.body1>{name}</Text.body1>
+          <Text.body2 className="mt-1">{lastMessage}</Text.body2>
         </div>
       </div>
       <div className="flex flex-col justify-start self-start">
-        <p className="text-xs">{convertNumberToTime(dateUnix)}</p>
+        <Text.body2>{convertNumberToTime(dateUnix)}</Text.body2>
       </div>
     </div>
   );

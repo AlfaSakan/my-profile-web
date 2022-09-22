@@ -4,6 +4,7 @@ import DoneAllIcon from '@material-ui/icons/DoneAll';
 import { User } from 'models/user/user.model';
 import React from 'react';
 import { convertNumberToTime } from 'utils/converter.util';
+import { Text } from '../';
 
 interface IProps {
   message: string;
@@ -22,6 +23,8 @@ const Message: React.FC<IProps> = ({
   sender,
   senderColor,
 }) => {
+  console.log(sender);
+
   return (
     <div className="flex-col bg-white h-fit min-w-fitCostume max-w-xs sm:max-w-xl px-2 py-1 relative rounded-md text-sm">
       {isIcon &&
@@ -35,13 +38,16 @@ const Message: React.FC<IProps> = ({
           </div>
         ))}
       {sender && isLeft && (
-        <p className="text-xs font-semibold" style={{ color: senderColor }}>
+        <Text.body2
+          className="text-xs font-semibold"
+          style={{ color: senderColor }}
+        >
           {sender?.name}
-        </p>
+        </Text.body2>
       )}
-      <p>{message}</p>
+      <Text.body1>{message}</Text.body1>
       <div className="items-center gap-1 self-end">
-        <p className="text-xs">{convertNumberToTime(time)}</p>
+        <Text.body2>{convertNumberToTime(time)}</Text.body2>
         <DoneAllIcon style={{ fontSize: 14 }} />
       </div>
     </div>

@@ -2,7 +2,7 @@
 
 exports[`message component test render correctly 1`] = `
 <div
-  className="bg-white h-fit min-w-fitCostume max-w-xl w-max px-2 py-1 relative rounded-md text-sm pr-16"
+  className="flex-col bg-white h-fit min-w-fitCostume max-w-xs sm:max-w-xl px-2 py-1 relative rounded-md text-sm"
 >
   <div
     className="absolute -top-2 -left-[0.9rem]"
@@ -38,7 +38,7 @@ exports[`message component test render correctly 1`] = `
     message test
   </p>
   <div
-    className="absolute right-2 flex items-center bottom-0 gap-1"
+    className="items-center gap-1 self-end"
   >
     <p
       className="text-xs"

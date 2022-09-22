@@ -2,13 +2,13 @@
 
 exports[`HeaderBody component test should render correctly 1`] = `
 <div
-  className="flex flex-col-reverse flex-1 px-20 gap-1 pb-5 overflow-y-scroll"
+  className="flex flex-col-reverse flex-1 sm:px-20 px-5 gap-1 pb-5 overflow-y-scroll"
 >
   <div
     className="self-end"
   >
     <div
-      className="bg-white h-fit min-w-fitCostume max-w-xl w-max px-2 py-1 relative rounded-md text-sm pr-16"
+      className="flex-col bg-white h-fit min-w-fitCostume max-w-xs sm:max-w-xl px-2 py-1 relative rounded-md text-sm"
     >
       <div
         className="absolute -top-2 -right-[0.9rem]"
@@ -34,7 +34,7 @@ exports[`HeaderBody component test should render correctly 1`] = `
         123456789
       </p>
       <div
-        className="absolute right-2 flex items-center bottom-0 gap-1"
+        className="items-center gap-1 self-end"
       >
         <p
           className="text-xs"
@@ -64,13 +64,13 @@ exports[`HeaderBody component test should render correctly 1`] = `
 
 exports[`HeaderBody component test should render correctly 2`] = `
 <div
-  className="flex flex-col-reverse flex-1 px-20 gap-1 pb-5 overflow-y-scroll"
+  className="flex flex-col-reverse flex-1 sm:px-20 px-5 gap-1 pb-5 overflow-y-scroll"
 >
   <div
     className="self-end"
   >
     <div
-      className="bg-white h-fit min-w-fitCostume max-w-xl w-max px-2 py-1 relative rounded-md text-sm pr-16"
+      className="flex-col bg-white h-fit min-w-fitCostume max-w-xs sm:max-w-xl px-2 py-1 relative rounded-md text-sm"
     >
       <div
         className="absolute -top-2 -right-[0.9rem]"
@@ -96,7 +96,7 @@ exports[`HeaderBody component test should render correctly 2`] = `
         123456789
       </p>
       <div
-        className="absolute right-2 flex items-center bottom-0 gap-1"
+        className="items-center gap-1 self-end"
       >
         <p
           className="text-xs"

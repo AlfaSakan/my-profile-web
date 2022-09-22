@@ -8,6 +8,20 @@ exports[`HeaderBody component test should render correctly 1`] = `
     className="flex items-center"
   >
     <div
+      className="mr-2 sm:hidden cursor-pointer"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+        />
+      </svg>
+    </div>
+    <div
       className="rounded-full bg-gray-300 mr-4 flex items-center justify-center overflow-hidden h-10 w-10"
     >
       <svg
@@ -43,7 +57,7 @@ exports[`HeaderBody component test should render correctly 1`] = `
     className="flex items-center"
   >
     <div
-      className="mr-5"
+      className="sm:mr-5"
     >
       <div
         className="cursor-pointer"
@@ -53,6 +67,12 @@ exports[`HeaderBody component test should render correctly 1`] = `
           aria-hidden={true}
           className="MuiSvgIcon-root"
           focusable="false"
+          style={
+            Object {
+              "fill": "#2C3333",
+              "fontSize": 20,
+            }
+          }
           viewBox="0 0 24 24"
         >
           <path
@@ -62,7 +82,7 @@ exports[`HeaderBody component test should render correctly 1`] = `
       </div>
     </div>
     <div
-      className="cursor-pointer"
+      className="cursor-pointer hidden sm:flex"
       data-testid="header-body-menu"
       onClick={[MockFunction]}
     >

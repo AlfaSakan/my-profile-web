@@ -2,7 +2,7 @@
 
 exports[`Search component test should render correctly 1`] = `
 <div
-  className="flex p-2 pl-3 bg-white rounded-md items-center undefined"
+  className="flex p-2 pl-3 bg-white w-full rounded-md items-center undefined"
 >
   <div
     className="mr-4"

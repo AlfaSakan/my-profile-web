@@ -1,4 +1,5 @@
 import { MouseEventHandler } from 'react';
+import { Text } from '../';
 
 interface IProps {
   text: string;
@@ -23,7 +24,7 @@ const Button: React.FC<IProps> = ({
       onClick={onClick}
       style={{ height, width }}
     >
-      <p>{text}</p>
+      <Text.body1>{text}</Text.body1>
     </button>
   );
 };

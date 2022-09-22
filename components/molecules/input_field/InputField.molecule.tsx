@@ -9,7 +9,7 @@ interface Props {
 
 const InputField: React.FC<Props> = ({ label, onChange, value, textError }) => {
   return (
-    <div>
+    <div className="flex-col">
       <p>{label}</p>
       <Input
         className="border py-3 mt-2"
