@@ -29,8 +29,12 @@ exports[`HeaderBody component test should render correctly 1`] = `
     <div
       className="flex flex-col"
     >
-      <p />
-      <p />
+      <p
+        className="text-base"
+      />
+      <p
+        className="text-xs text-slate-500"
+      />
     </div>
   </div>
   <div
@@ -67,7 +71,9 @@ exports[`HeaderBody component test should render correctly 1`] = `
           }
         }
       >
-        <p>
+        <p
+          className="text-sm"
+        >
           Buat Group
         </p>
       </button>

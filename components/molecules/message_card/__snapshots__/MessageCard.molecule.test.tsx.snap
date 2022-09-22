@@ -29,7 +29,9 @@ exports[`MessageCard component test should render correctly 1`] = `
     <div
       className="flex flex-col"
     >
-      <p>
+      <p
+        className="text-sm"
+      >
         alfa
       </p>
       <p
@@ -43,7 +45,7 @@ exports[`MessageCard component test should render correctly 1`] = `
     className="flex flex-col justify-start self-start"
   >
     <p
-      className="text-xs"
+      className="text-xs undefined"
     >
       17:17
     </p>

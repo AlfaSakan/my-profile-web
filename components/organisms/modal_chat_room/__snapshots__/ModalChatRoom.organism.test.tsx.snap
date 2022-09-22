@@ -6,13 +6,15 @@ exports[`HeaderBody component test should render correctly 1`] = `
   onClick={[MockFunction]}
 >
   <div
-    className="bg-primary flex flex-col w-1/2 h-1/2 rounded-2xl"
+    className="bg-primary flex flex-col md:w-1/2 md:mx-0 h-1/2 rounded-2xl w-full mx-10"
     onClick={[Function]}
   >
     <div
       className="flex items-center justify-between px-8 py-4 bg-secondary rounded-t-2xl"
     >
-      <p>
+      <p
+        className="text-sm"
+      >
         Buat Chat Room Baru
       </p>
       <div
@@ -34,7 +36,9 @@ exports[`HeaderBody component test should render correctly 1`] = `
     <div
       className="flex flex-1 flex-col px-8 py-4 border-y justify-between"
     >
-      <div>
+      <div
+        className="flex-col"
+      >
         <p>
           Nama Chat Room
         </p>
@@ -46,7 +50,9 @@ exports[`HeaderBody component test should render correctly 1`] = `
           value="name value"
         />
       </div>
-      <div>
+      <div
+        className="flex-col"
+      >
         <p>
           Deskripsi
         </p>
@@ -61,7 +67,9 @@ exports[`HeaderBody component test should render correctly 1`] = `
       <div
         className="flex flex-col relative"
       >
-        <p>
+        <p
+          className="text-sm"
+        >
           Anggota
         </p>
         <div
@@ -83,7 +91,9 @@ exports[`HeaderBody component test should render correctly 1`] = `
           }
         }
       >
-        <p>
+        <p
+          className="text-sm"
+        >
           Login
         </p>
       </button>

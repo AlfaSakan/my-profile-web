@@ -30,14 +30,16 @@ exports[`HeaderBody component test should render correctly 1`] = `
           />
         </svg>
       </div>
-      <p>
+      <p
+        className="text-sm"
+      >
         123456789
       </p>
       <div
         className="items-center gap-1 self-end"
       >
         <p
-          className="text-xs"
+          className="text-xs undefined"
         >
           17:17
         </p>
@@ -92,14 +94,16 @@ exports[`HeaderBody component test should render correctly 2`] = `
           />
         </svg>
       </div>
-      <p>
+      <p
+        className="text-sm"
+      >
         123456789
       </p>
       <div
         className="items-center gap-1 self-end"
       >
         <p
-          className="text-xs"
+          className="text-xs undefined"
         >
           17:17
         </p>

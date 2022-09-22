@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InputField component test should render correctly 1`] = `
-<div>
+<div
+  className="flex-col"
+>
   <p>
     input
   </p>
