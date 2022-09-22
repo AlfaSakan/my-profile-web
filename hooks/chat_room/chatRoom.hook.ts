@@ -71,6 +71,8 @@ const useChatRoomHook = () => {
     setChoosenChatRoom({} as ChatRoom);
   };
 
+  const resetChoosenRoom = () => setChoosenChatRoom({} as ChatRoom);
+
   useEffect(() => {
     chatRoomHandler();
 
@@ -89,6 +91,7 @@ const useChatRoomHook = () => {
     chatRoomHandler,
     setChatRooms,
     resetChatRoomHook,
+    resetChoosenRoom,
   };
 };
 

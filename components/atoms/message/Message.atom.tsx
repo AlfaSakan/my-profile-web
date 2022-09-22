@@ -23,7 +23,7 @@ const Message: React.FC<IProps> = ({
   senderColor,
 }) => {
   return (
-    <div className="bg-white h-fit min-w-fitCostume max-w-xl w-max px-2 py-1 relative rounded-md text-sm pr-16">
+    <div className="flex-col bg-white h-fit min-w-fitCostume max-w-xs sm:max-w-xl px-2 py-1 relative rounded-md text-sm">
       {isIcon &&
         (isLeft ? (
           <div className="absolute -top-2 -left-[0.9rem]">
@@ -40,7 +40,7 @@ const Message: React.FC<IProps> = ({
         </p>
       )}
       <p>{message}</p>
-      <div className="absolute right-2 flex items-center bottom-0 gap-1">
+      <div className="items-center gap-1 self-end">
         <p className="text-xs">{convertNumberToTime(time)}</p>
         <DoneAllIcon style={{ fontSize: 14 }} />
       </div>

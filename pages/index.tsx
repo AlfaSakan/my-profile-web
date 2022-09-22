@@ -26,7 +26,13 @@ const Home: NextPage<IProps> = () => {
     userHook,
     onClickMenu,
     searchHook,
-    chatRoomHook,
+    chatRoomHook: {
+      choosenChatRoom,
+      chatRooms,
+      onClickChatRoom,
+      participantNames,
+      resetChoosenRoom,
+    },
     messageHook,
     userDataHook,
     modalRoomHook,
@@ -41,7 +47,11 @@ const Home: NextPage<IProps> = () => {
   return (
     <div className="flex h-screen w-screen">
       {/* #region SIDEBAR */}
-      <div className="flex flex-col shrink grow-[0.2]">
+      <div
+        className={`${
+          choosenChatRoom?.name ? 'hidden sm:flex' : ''
+        } flex-col w-full sm:w-fit shrink grow-[0.2]`}
+      >
         <HeaderSideBar
           onClickMenu={modalRoomHook.openModalChatRoom}
           name={userHook.user.name}
@@ -72,19 +82,18 @@ const Home: NextPage<IProps> = () => {
                   </div>
                 );
               })
-            : chatRoomHook.chatRooms.map((room, index) => {
+            : chatRooms.map((room, index) => {
                 const { messages } = room;
 
                 return (
                   <div
                     key={`chat room ${room.chat_room_id} ${index}`}
                     onClick={() => {
-                      chatRoomHook.onClickChatRoom(room, userHook.user.user_id);
+                      onClickChatRoom(room, userHook.user.user_id);
                       messageHook.messageHandler('');
                     }}
                     className={`flex flex-col ${
-                      chatRoomHook.choosenChatRoom.chat_room_id ===
-                      room.chat_room_id
+                      choosenChatRoom.chat_room_id === room.chat_room_id
                         ? 'bg-secondary'
                         : 'bg-white'
                     }`}
@@ -103,18 +112,24 @@ const Home: NextPage<IProps> = () => {
       </div>
       {/* #endregion SIDEBAR */}
       {/* #region MAINBAR */}
-      <div className="bg-primary flex flex-col h-full flex-1">
+      <div
+        className={`${
+          choosenChatRoom?.name ? '' : 'hidden'
+        } sm:flex bg-primary flex-col h-full flex-1`}
+      >
         <HeaderBody
           onClickMenu={onClickMenu}
-          name={chatRoomHook.choosenChatRoom?.name}
-          status={chatRoomHook.participantNames}
+          name={choosenChatRoom?.name}
+          status={participantNames}
+          isFocus={choosenChatRoom?.name !== undefined}
+          onClickBack={resetChoosenRoom}
         />
         <MainBody
-          messages={chatRoomHook.choosenChatRoom?.messages}
+          messages={choosenChatRoom?.messages}
           userId={userHook.user.user_id}
           userData={userDataHook.userData}
         />
-        {chatRoomHook.choosenChatRoom && (
+        {choosenChatRoom && (
           <FooterBody
             onChange={messageHook.messageHandler}
             onSubmitMessage={async () => {
@@ -122,7 +137,7 @@ const Home: NextPage<IProps> = () => {
                 setLoading(true);
                 const res = await messageHook.onSubmitMessage(
                   userHook.user.user_id,
-                  chatRoomHook.choosenChatRoom?.chat_room_id || ''
+                  choosenChatRoom?.chat_room_id || ''
                 )();
 
                 if (res) {

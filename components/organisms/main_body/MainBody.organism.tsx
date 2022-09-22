@@ -18,7 +18,7 @@ const MainBody: React.FC<IProps> = ({
   userData = [],
 }) => {
   return (
-    <div className="flex flex-col-reverse flex-1 px-20 gap-1 pb-5 overflow-y-scroll">
+    <div className="flex flex-col-reverse flex-1 sm:px-20 px-5 gap-1 pb-5 overflow-y-scroll">
       {messages.map((message, index) => {
         const userMessage = message.sender_id === userId;
 

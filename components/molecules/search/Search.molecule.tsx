@@ -5,6 +5,7 @@ interface IProps {
   classname?: string;
   value?: string;
   onChange?(_: string): void;
+  onClick?(): void;
   isActive?: boolean;
 }
 
@@ -15,7 +16,7 @@ const Search: React.FC<IProps> = ({
 }) => {
   return (
     <div
-      className={`flex p-2 pl-3 bg-white rounded-md items-center ${classname}`}
+      className={`flex p-2 pl-3 bg-white w-full rounded-md items-center ${classname}`}
     >
       <div className="mr-4">
         <SearchIcon style={{ fontSize: 20, fill: '#2C3333' }} />
@@ -36,11 +37,17 @@ const Dynamic: React.FC<IProps> = ({
   isActive = false,
   onChange = () => {},
   value,
+  onClick = () => {},
 }) => {
   const [active, setActive] = useState(false);
 
   const activeHandler = () => {
     setActive(!active);
+  };
+
+  const onClickSearch = () => {
+    activeHandler();
+    onClick();
   };
 
   useEffect(() => {
@@ -54,13 +61,13 @@ const Dynamic: React.FC<IProps> = ({
   if (!active)
     return (
       <div onClick={activeHandler} className="cursor-pointer">
-        <SearchIcon />
+        <SearchIcon style={{ fontSize: 20, fill: '#2C3333' }} />
       </div>
     );
 
   return (
     <div
-      className={`flex p-2 pl-3 bg-transparent items-center border-b ${classname}`}
+      className={`p-2 pl-3 bg-transparent items-center border-b ${classname}`}
     >
       <input
         value={value}
@@ -70,7 +77,7 @@ const Dynamic: React.FC<IProps> = ({
         placeholder="Search or start new chat"
         autoFocus
       />
-      <div className="mr-4">
+      <div className="cursor-pointer" onClick={onClickSearch}>
         <SearchIcon style={{ fontSize: 20, fill: '#2C3333' }} />
       </div>
     </div>
